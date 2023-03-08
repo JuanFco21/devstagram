@@ -14,22 +14,37 @@
               @csrf
 
               @if (session('mensaje'))
-              <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ session('mensaje') }}</p>
+              <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                {{ session('mensaje') }}</p>
               @endif
 
                  <div class="mb-5">
                      <label for="email" class="mb-2 block uppercase text-gray-500 font bold">Email</label>
-                     <input id="email" name="email" type="email" placeholder="Tu Email de registro" class="border p-3 w-full rounded-lg @error('email') border-red-500       
-                     @enderror" value="{{old('email')}}">
+                     <input 
+                     id="email" 
+                     name="email" 
+                     type="email" 
+                     placeholder="Tu Email de registro" 
+                     class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror" 
+                     value="{{old('email')}}"
+                     />
                      @error('email')
-                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                        {{ $message }}</p>
                     @enderror
                  </div>
                  <div class="mb-5">
                      <label for="password" class="mb-2 block uppercase text-gray-500 font bold">Password</label>
-                     <input id="password" name="password" type="password" placeholder="Password de registro" class="border p-3 w-full rounded-lg">
+                     <input 
+                     id="password" 
+                     name="password" 
+                     type="password" 
+                     placeholder="Password de registro" 
+                     class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
+                     />
                      @error('password')
-                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                        {{ $message }}</p>
                     @enderror
                  </div>
 
