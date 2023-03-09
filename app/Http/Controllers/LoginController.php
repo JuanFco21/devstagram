@@ -18,6 +18,10 @@ class LoginController extends Controller
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
+        ],[
+            'email.required' => 'Es obligatorio escribir un email',
+            'email.email' => 'Introduce un email valido',
+            'password.required' => 'Es obligatorio escribir una contraseña',
         ]);
 
         if(!auth()->attempt($request->only('email', 'password'), $request->remember)){
