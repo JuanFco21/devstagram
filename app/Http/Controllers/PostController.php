@@ -37,6 +37,11 @@ class PostController extends Controller
             'titulo' => 'required|max:255',
             'descripcion' => 'required',
             'imagen' => 'required'
+        ],[
+            'titulo.required' => 'Es obligatorio escribir un titulo',
+            'titulo.max' => 'El titulo solo puede tener un max. de 255 caracteres',
+            'descripcion.required' => 'Es obligatorio escribir una descripcion',
+            'imagen.required' => 'Es obligatorio subir una imagen'
         ]);
 
         //Post::create([

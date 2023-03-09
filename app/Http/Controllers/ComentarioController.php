@@ -16,6 +16,9 @@ class ComentarioController extends Controller
         //Validar
         $this->validate($request, [
             'comentario' => 'required|max:255'
+        ],[
+            'comentario.required' => 'Tienes que escribir un comentario para que se publique',
+            'comentario.max' => 'El comentario solo puede tener un max. de 255 caracteres',
         ]);
 
         //Almacenar el resultado
